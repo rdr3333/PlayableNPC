@@ -1,0 +1,4 @@
+name: PlayableNPC
+version: 1.0.0
+main: com.ethereal.playablenpc.PlayableNPCPlugin
+api-version: "1.21"
