@@ -1,0 +1,58 @@
+name: PlayableNPC
+version: 1.0.0
+main: com.ethereal.playablenpc.PlayableNPCPlugin
+api-version: "1.21"
+description: Позволяет игрокам вселяться в NPC и управлять ими
+author: Ethereal Team
+
+commands:
+  createnpc:
+    description: Создать NPC с указанным именем и опционально URL скина
+    usage: /createnpc <имя> [url]
+    permission: playablenpc.create
+  playnpc:
+    description: Вселиться в NPC
+    usage: /playnpc <имя>
+    permission: playablenpc.play
+  stopnpc:
+    description: Выйти из NPC
+    usage: /stopnpc
+    permission: playablenpc.play
+  setskin:
+    description: Установить скин NPC по URL
+    usage: /setskin <имя> <url>
+    permission: playablenpc.setskin
+  removeskin:
+    description: Убрать кастомный скин у NPC
+    usage: /removeskin <имя>
+    permission: playablenpc.setskin
+  vanish:
+    description: Сделать себя невидимым (встроенный ваниш)
+    usage: /vanish
+    permission: playablenpc.vanish
+  unvanish:
+    description: Сделать себя видимым
+    usage: /unvanish
+    permission: playablenpc.vanish
+
+permissions:
+  playablenpc.*:
+    description: Все права плагина
+    default: op
+    children:
+      playablenpc.create: true
+      playablenpc.play: true
+      playablenpc.setskin: true
+      playablenpc.vanish: true
+  playablenpc.create:
+    description: Право на создание NPC
+    default: op
+  playablenpc.play:
+    description: Право на вселение в NPC
+    default: true
+  playablenpc.setskin:
+    description: Право на установку скина
+    default: op
+  playablenpc.vanish:
+    description: Право на ваниш
+    default: op
